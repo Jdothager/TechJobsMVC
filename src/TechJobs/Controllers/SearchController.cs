@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using TechJobs.Models;
+using System.Linq;
 
 namespace TechJobs.Controllers
 {
@@ -29,6 +30,5 @@ namespace TechJobs.Controllers
             ViewBag.columns = ListController.columnChoices;
             return View("~/Views/Search/Index.cshtml");
         }
-
     }
 }

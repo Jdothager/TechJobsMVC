@@ -40,7 +40,15 @@
             {
                 <tr>
                     <td>@field.Key: </td>
-                    <td>@field.Value</td>
+
+                    @if (field.Key != "name")
+                    {
+                        <td><a asp-controller="List" asp-action="Jobs" asp-route-column="@field.Key" asp-route-value="@field.Value">@field.Value</a></td>
+                    }
+                    else
+                    {
+                        <td>@field.Value</td>
+                    }
                 </tr>
             }
         </table>

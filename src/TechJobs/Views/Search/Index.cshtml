@@ -32,25 +32,7 @@
 
     <h3>@ViewBag.jobs.Count Result(s)</h3>
 
-    // TODO #2 - Loop over jobs dictionary and display all job fields 
-    @foreach (var job in ViewBag.jobs)
-    {
-        <table class="job-listing">
-            @foreach (var field in job)
-            {
-                <tr>
-                    <td>@field.Key: </td>
+    // TODO #2 - Loop over jobs dictionary and display all job fields
+    @Html.Partial("~/Views/Shared/ResultsPartial.cshtml")
 
-                    @if (field.Key != "name")
-                    {
-                        <td><a asp-controller="List" asp-action="Jobs" asp-route-column="@field.Key" asp-route-value="@field.Value">@field.Value</a></td>
-                    }
-                    else
-                    {
-                        <td>@field.Value</td>
-                    }
-                </tr>
-            }
-        </table>
-    }
 }
